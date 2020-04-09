@@ -30,7 +30,6 @@ void draw() {
   for(int i = 0 ; i< 4 ;i++){
     for(int j =0; j< 4 ;j++){
       rect(i*200 + (i+1) *10, j*200 + (j+1) *10, 200, 200);  
-    
     }
     
     
@@ -45,9 +44,34 @@ void draw() {
 
 
 void keyPressed() {
-
   if (released) {
-    
+    if(key == CODED){
+      switch(keyCode){
+        case UP:
+          p.moveDirection = new PVector(0,-1);
+          p.moveTiles();
+          break;
+          
+        case DOWN:
+          p.moveDirection = new PVector(0,1);
+          p.moveTiles();
+          break;
+        
+        case RIGHT:
+          p.moveDirection = new PVector(1,0);
+          p.moveTiles();
+          break;
+   
+        case LEFT:
+          p.moveDirection = new PVector(-1,0);
+          p.moveTiles();
+          break;
+          
+        default:
+          break;
+      }
+      
+    }
   }
 }
 

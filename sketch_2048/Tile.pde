@@ -36,7 +36,7 @@ class Tile {
       fill(colour);
       noStroke();
       rect(pixelPos.x, pixelPos.y, 200, 200);
-      if (value < 8) {
+      if (value < 2048) {
         fill(40);
       } else {
         fill(240);
@@ -73,19 +73,17 @@ class Tile {
   }
   
   void setAllColor(){
-    map.put(2,new int[] {0, 255, 0});
-    map.put(4,new int[] {0, 255, 0});
-    map.put(8,new int[] {0, 255, 0});
-    map.put(16,new int[] {0, 255, 0});
-    map.put(32,new int[] {0, 255, 0});
-    map.put(64,new int[] {0, 255, 0});
-    map.put(128,new int[] {0, 255, 0});
-    map.put(256,new int[] {0, 255, 0});
-    map.put(512,new int[] {0, 255, 0});
-    map.put(1024,new int[] {0, 255, 0});
-    map.put(2048,new int[] {0, 255, 0});
-    map.put(4096,new int[] {0, 255, 0});
-    map.put(8192,new int[] {0, 255, 0});
+    map.put(2,new int[] {0, 255, 80});
+    map.put(4,new int[] {0, 255, 90});
+    map.put(32,new int[] {0, 255, 100});
+    map.put(64,new int[] {0, 255, 110});
+    map.put(128,new int[] {10, 0, 120});
+    map.put(256,new int[] {100, 0, 0});
+    map.put(512,new int[] {150, 0, 0});
+    map.put(1024,new int[] {0, 0, 10});
+    map.put(2048,new int[] {0, 0, 20});
+    map.put(4096,new int[] {0, 0, 40});
+    map.put(8192,new int[] {0, 0, 80});
   }
   
   void setColour() {
