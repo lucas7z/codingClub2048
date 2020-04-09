@@ -1,4 +1,4 @@
-class Player {
+class Player { 
   long fitness;
   boolean dead = false;
   int score =0;
@@ -30,7 +30,6 @@ class Player {
   }
 
   Player(boolean isReplay) {
-
     fillEmptyPositions();
   }
 

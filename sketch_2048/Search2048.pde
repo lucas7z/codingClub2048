@@ -3,18 +3,18 @@ boolean released = true;
 boolean teleport = false;
 
 int maxDepth = 4;
-
 int pauseCounter = 100;
 int nextConnectionNo = 1000;
 int speed = 60;
 int moveSpeed = 60;
 
+int numberCase = 4;
 
 int xoffset = 0;
 int yoffset = 0;
 
 void settings() {
-  size(850, 850);
+  size(850, 850000);
 }
 
 void setup() {

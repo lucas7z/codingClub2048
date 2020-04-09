@@ -8,7 +8,8 @@ class State {
   boolean differentFromParent = false;
   boolean dead =false;
   int bestChild =0;
-
+  
+  
   State() {
   }
 
