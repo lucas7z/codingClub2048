@@ -8,11 +8,12 @@ class Tile {
   color colour;
   PVector positionTo;
   PVector pixelPosTo;
-
+  HashMap<Integer, int[]> map;
 
   boolean deathOnImpact =false;
 
   Tile(int x, int y) {
+    map = new HashMap();
     if (random(1)< 0.1) {
       value = 4;
     } else {
@@ -24,9 +25,11 @@ class Tile {
 
     pixelPos = new PVector(xoffset +x*200 + (x+1) *10, yoffset + y*200 + (y+1) *10);
     pixelPosTo = new PVector(xoffset + x*200 + (x+1) *10, yoffset + y*200 + (y+1) *10);
-
+    setAllColor();
     setColour();
   }
+  
+  
 
   void show() {
     if (!deathOnImpact || moving) {
@@ -40,7 +43,7 @@ class Tile {
       }
       textAlign(CENTER, CENTER);
       textSize(50);
-      text(value = 0, pixelPos.x+100, pixelPos.y+100);
+      text(value, pixelPos.x+100, pixelPos.y+100);
     }
   }
 
@@ -69,8 +72,30 @@ class Tile {
     }
   }
   
+  void setAllColor(){
+    map.put(2,new int[] {0, 255, 0});
+    map.put(4,new int[] {0, 255, 0});
+    map.put(8,new int[] {0, 255, 0});
+    map.put(16,new int[] {0, 255, 0});
+    map.put(32,new int[] {0, 255, 0});
+    map.put(64,new int[] {0, 255, 0});
+    map.put(128,new int[] {0, 255, 0});
+    map.put(256,new int[] {0, 255, 0});
+    map.put(512,new int[] {0, 255, 0});
+    map.put(1024,new int[] {0, 255, 0});
+    map.put(2048,new int[] {0, 255, 0});
+    map.put(4096,new int[] {0, 255, 0});
+    map.put(8192,new int[] {0, 255, 0});
+  }
+  
   void setColour() {
-
+    try{
+    int[] val = map.get(value);
+    this.colour = color(val[0],val[1],val[2]);
+    }catch(NullPointerException e){
+      int[] val = map.get(2);
+      this.colour = color(val[0],val[1],val[2]);
+    }
   }
 
   Tile clone() {

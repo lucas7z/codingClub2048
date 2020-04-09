@@ -47,12 +47,12 @@ void draw() {
 void keyPressed() {
 
   if (released) {
+    
   }
 }
 
 void keyReleased(){
  released = true; 
-  
 }
 
 boolean compareVec(PVector p1, PVector p2) {
